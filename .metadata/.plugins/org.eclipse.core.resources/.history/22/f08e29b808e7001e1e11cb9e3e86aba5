@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // String a ser invertida (pode ser alterada conforme necessário)
+        String inputString = "Hello, world!";
+
+        // Chama o método para inverter a string e imprime o resultado
+        String invertedString = inverterString(inputString);
+        System.out.println("String original: " + inputString);
+        System.out.println("String invertida: " + invertedString);
+    }
+
+    // Método para inverter uma string
+    public static String inverterString(String input) {
+        // Converte a string para um array de caracteres
+        char[] charArray = input.toCharArray();
+
+        // Inicializa duas variáveis, uma para o início da string e outra para o fim
+        int start = 0;
+        int end = charArray.length - 1;
+
+        // Loop para inverter os caracteres
+        while (start < end) {
+            // Troca os caracteres de posição
+            char temp = charArray[start];
+            charArray[start] = charArray[end];
+            charArray[end] = temp;
+
+            // Atualiza as posições para o próximo par de caracteres
+            start++;
+            end--;
+        }
+
+        // Converte o array de caracteres de volta para uma string
+        return new String(charArray);
+    }
+}

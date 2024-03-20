@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicita ao usuário que insira os primeiros números da sequência
+        System.out.println("Digite os primeiros números da sequência separados por espaços:");
+        String input = scanner.nextLine();
+
+        // Divide a entrada em um array de strings
+        String[] numerosString = input.split(" ");
+
+        // Converte os números de strings para inteiros
+        int[] numeros = new int[numerosString.length];
+        for (int i = 0; i < numerosString.length; i++) {
+            numeros[i] = Integer.parseInt(numerosString[i]);
+        }
+
+        // Calcula a diferença entre os dois últimos números da sequência
+        int diferenca = numeros[numeros.length - 1] - numeros[numeros.length - 2];
+
+        // Calcula o próximo número na sequência
+        int proximoNumero = numeros[numeros.length - 1] + diferenca;
+
+        // Imprime o próximo número na sequência
+        System.out.println("O próximo número na sequência é: " + proximoNumero);
+
+        scanner.close();
+    }
+}
